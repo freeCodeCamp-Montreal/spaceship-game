@@ -10,9 +10,11 @@ const state = {
 function checkArrowPress(event) {
   switch (event.keyCode) {
     case 38: // up
+      event.preventDefault();
       g.Ship.moveUp();
       break;
     case 40: // down
+      event.preventDefault();
       g.Ship.moveDown();
       break;
     case 37: // left
@@ -20,7 +22,8 @@ function checkArrowPress(event) {
     case 39: // right
       break;
     case 32: // space for shooting
-      g.Ship.shoot(g.space);
+      event.preventDefault();
+      g.Ship.shoot();
       break;
     default:
       break;
@@ -31,13 +34,13 @@ function start() {
   g.start = document.querySelector('.start');
   g.stop = document.querySelector('.stop');
   g.space = document.querySelector('.space');
-  g.Ship = new Ship(document.querySelector('.ship'));
+  g.Ship = new Ship(document.querySelector('.ship'), g.space);
 
   document.addEventListener('keydown', checkArrowPress);
 
-  const alien = new Creature();
+  // const alien = new Creature();
   debugger;
-  g.space.appendChild(alien.creature);
+  // g.space.appendChild(alien.creature);
   console.log(alien.creature);
   // alien.move();
 }

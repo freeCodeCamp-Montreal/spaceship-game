@@ -1,5 +1,6 @@
 /* global window */
 import Pew from './js/Pew';
+
 /**
  * Class which receives a ship node and
  * functions to control movement and shooting
@@ -7,10 +8,14 @@ import Pew from './js/Pew';
 
 class Ship {
   // ship node
-  constructor(ship) {
+  constructor(ship, space) {
+    this.step = 8;
+    this.space = space;
     this.ship = ship;
     this.lives = 3;
-    this.spaceHeight = window.innerHeight - 110;
+    this.spaceHeight = space.offsetHeight;
+    console.log('== spaceHeight', space.offsetHeight);
+    this.height = ship.height;
     this.start = null;
     this.topHolder = this.getPosition();
   }
@@ -38,23 +43,23 @@ class Ship {
 
     // window.requestAnimationFrame(this.step);
 
-    this.ship.style.top = `${position - 4}px`;
+    this.ship.style.top = `${position - this.step}px`;
   }
 
   moveDown() {
     const position = this.getPosition();
 
-    if (position >= this.spaceHeight) return;
+    if (position >= this.spaceHeight - this.height) return;
 
-    this.ship.style.top = `${position + 4}px`;
+    this.ship.style.top = `${position + this.step}px`;
   }
 
-  shoot(space) {
+  shoot() {
     const x = window.getComputedStyle(this.ship).getPropertyValue('left');
     const y = window.getComputedStyle(this.ship).getPropertyValue('top');
     const newPew = new Pew(x, y);
 
-    space.appendChild(newPew.pew);
+    this.space.appendChild(newPew.pew);
     newPew.move();
   }
 

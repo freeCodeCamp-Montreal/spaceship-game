@@ -1,5 +1,5 @@
 /* global document Ship */
-import Creature from './js/Baddies.js';
+import Baddies from './js/Baddies.js';
 
 const g = {};
 const state = {
@@ -38,11 +38,11 @@ function start() {
 
   document.addEventListener('keydown', checkArrowPress);
 
-  debugger;
-  // const alien = new Baddies();
-  // g.space.appendChild(alien.creature);
-  // console.log(alien.creature);
-  // alien.move();
+  // debugger;
+  const alien = new Baddies(g.space);
+  g.space.appendChild(alien.creature);
+  console.log('the alien', alien.creature);
+  alien.move();
 }
 
 start();

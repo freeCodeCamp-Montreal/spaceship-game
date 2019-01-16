@@ -16,6 +16,7 @@ class Ship {
     this.spaceHeight = space.offsetHeight;
     console.log('== spaceHeight', space.offsetHeight);
     this.height = ship.height;
+    this.width = ship.width;
     this.start = null;
     this.topHolder = this.getPosition();
   }
@@ -57,7 +58,8 @@ class Ship {
   shoot() {
     const x = window.getComputedStyle(this.ship).getPropertyValue('left');
     const y = window.getComputedStyle(this.ship).getPropertyValue('top');
-    const newPew = new Pew(x, y);
+    console.log('x:', x, 'y:', y);
+    const newPew = new Pew(x, y, this, this.space);
 
     this.space.appendChild(newPew.pew);
     newPew.move();

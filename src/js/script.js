@@ -41,7 +41,7 @@ function start() {
   // const alien = new Creature();
   debugger;
   // g.space.appendChild(alien.creature);
-  console.log(alien.creature);
+  // console.log(alien.creature);
   // alien.move();
 }
 

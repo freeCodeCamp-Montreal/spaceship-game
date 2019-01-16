@@ -19,6 +19,6 @@
 }
 
 .pew {
-	position: relative;
-	left: 0px;
+	position: absolute;
+	/*transform: scale(0.7);*/
 }

@@ -20,14 +20,15 @@ module.exports = class Pew {
   move() {
     const interval = setInterval(() => {
       const x = window.parseInt(this.pew.style.left);
+      const pewWidth = window.parseInt(window.getComputedStyle(this.pew).getPropertyValue('width'));
 
-      if (x + 50 >= this.space.offsetWidth) {
+      if (x + pewWidth >= this.space.offsetWidth) {
         this.pew.remove();
         clearInterval(interval);
         return;
       }
 
-      this.pew.style.left = `${x + 1}px`;
+      this.pew.style.left = `${x + 8}px`;
     }, 10);
   }
 };

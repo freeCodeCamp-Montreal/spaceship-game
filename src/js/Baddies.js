@@ -2,7 +2,7 @@
 /**
  * The creatures our ship will shoot at
  */
-module.exports = class Creature {
+module.exports = class Baddies {
   constructor() {
     this.creature = document.createElement('img');
     this.creature.src = 'static/Creature.svg';

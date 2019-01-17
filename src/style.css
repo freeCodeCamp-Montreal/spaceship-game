@@ -25,4 +25,18 @@
 
 .baddie {
 	position: absolute;
+	width: 60px;
+	height: 60px;
+}
+
+.baddie-fades {
+	opacity: 1;
+	transition: opacity 1.5s ease-out;
+}
+
+.baddie-died {
+	opacity: 0; /*applies the baddie-fades transition */
+	position: absolute;
+	width: 60px;
+	height: 60px;
 }

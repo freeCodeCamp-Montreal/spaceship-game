@@ -44,6 +44,11 @@ module.exports = class Pew {
 
       g.baddies.forEach( m => {
         console.log(`monster at: ${m.top()}, ${m.left()} was`, this.isMonsterHit(m) ? 'hit' : 'not hit');
+        if (this.isMonsterHit(m)) {
+          m.creature.src = 'static/boom.svg';
+          m.creature.classList.remove('baddie');
+          m.creature.classList.add('baddie-died');
+        }
       //   if (m.isHit(this)) {
       //     console.log('it was hit', m, this);
       //   }

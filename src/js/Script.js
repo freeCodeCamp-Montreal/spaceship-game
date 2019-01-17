@@ -35,6 +35,7 @@ function start() {
   g.stop = document.querySelector('.stop');
   g.space = document.querySelector('.space');
   g.Ship = new Ship(document.querySelector('.ship'), g.space);
+  g.baddies = [];
 
   document.addEventListener('keydown', checkArrowPress);
 
@@ -43,6 +44,7 @@ function start() {
   g.space.appendChild(alien.creature);
   console.log('the alien', alien.creature);
   alien.move();
+  g.baddies.push(alien);
 }
 
 start();

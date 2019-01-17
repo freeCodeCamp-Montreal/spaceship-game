@@ -10,7 +10,7 @@ module.exports = class Baddies {
     this.creature.src = 'static/Creature2.svg';
     this.creature.className = 'baddie';
     const baddiesX = `${space.offsetWidth}px`;
-    const baddiesY = `${Math.floor(Math.random() * space.offsetHeight)}px`;
+    const baddiesY = 100+'px';//`${Math.floor(Math.random() * space.offsetHeight)}px`;
     this.creature.style.left = baddiesX;
     this.creature.style.top = baddiesY;
   }
@@ -27,5 +27,28 @@ module.exports = class Baddies {
 
       this.creature.style.left = `${x - 2}px`;
     }, 100);
+  }
+
+  top() {
+    return window.parseInt(this.creature.style.top);
+  }
+
+  bottom() {
+    return this.top() + 60;
+  }
+
+  left() {
+    return window.parseInt(this.creature.style.left);
+  }
+
+  right() {
+    return this.left() + 60;
+  }
+
+  isHit(laser) {
+    return laser.left() < this.right() &&
+        laser.right() > this.left() &&
+        laser.top() < this.bottom() &&
+        laser.bottom() > this.top();
   }
 };

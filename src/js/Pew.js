@@ -17,10 +17,37 @@ module.exports = class Pew {
     this.pew.style.top = pewsY;
   }
 
+  top() {
+    return window.parseInt(this.pew.style.top);
+  }
+
+  bottom() {
+    return this.top() + 10;
+  }
+
+  left() {
+    return window.parseInt(this.pew.style.left);
+  }
+
+  right() {
+    return this.left() + 60;
+  }
+
+  isMonsterHit(monster) {
+    return monster.isHit(this);
+  }
+
   move() {
     const interval = setInterval(() => {
       const x = window.parseInt(this.pew.style.left);
       const pewWidth = window.parseInt(window.getComputedStyle(this.pew).getPropertyValue('width'));
+
+      g.baddies.forEach( m => {
+        console.log(`monster at: ${m.top()}, ${m.left()} was`, this.isMonsterHit(m) ? 'hit' : 'not hit');
+      //   if (m.isHit(this)) {
+      //     console.log('it was hit', m, this);
+      //   }
+      });
 
       if (x + pewWidth >= this.space.offsetWidth) {
         this.pew.remove();

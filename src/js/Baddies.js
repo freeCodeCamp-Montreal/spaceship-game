@@ -4,15 +4,21 @@
  */
 module.exports = class Baddies {
   constructor(space) {
+    this.space = space;
     this.height = 60;
     this.width = 60;
     this.creature = document.createElement('img');
     this.creature.src = 'static/Creature2.svg';
     this.creature.className = 'baddie baddie-fades';
     const baddiesX = `${space.offsetWidth}px`;
-    const baddiesY = 100+'px';//`${Math.floor(Math.random() * space.offsetHeight)}px`;
+    const baddiesY = `${Math.floor(Math.random() * space.offsetHeight)}px`;
+    this.step = Math.floor(Math.random() * 4); //random number between 0 - 3
     this.creature.style.left = baddiesX;
     this.creature.style.top = baddiesY;
+
+    this.space.appendChild(this.creature);
+    this.move();
+    g.baddies.push(this);
   }
 
   move() {
@@ -25,7 +31,7 @@ module.exports = class Baddies {
         return;
       }
 
-      this.creature.style.left = `${x - 2}px`;
+      this.creature.style.left = `${x - ((this.step + 1) * 2)}px`;
     }, 100);
   }
 

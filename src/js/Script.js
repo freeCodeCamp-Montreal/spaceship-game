@@ -39,12 +39,8 @@ function start() {
 
   document.addEventListener('keydown', checkArrowPress);
 
-  // debugger;
-  const alien = new Baddies(g.space);
-  g.space.appendChild(alien.creature);
-  console.log('the alien', alien.creature);
-  alien.move();
-  g.baddies.push(alien);
+  // creates monsters every 2100ms
+  this.monsterInterval = setInterval(() => { new Baddies(g.space); }, 5100);
 }
 
 start();

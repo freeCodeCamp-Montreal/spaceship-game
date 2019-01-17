@@ -48,6 +48,7 @@ module.exports = class Pew {
           m.creature.src = 'static/boom.svg';
           m.creature.classList.remove('baddie');
           m.creature.classList.add('baddie-died');
+          this.pew.remove();
         }
       //   if (m.isHit(this)) {
       //     console.log('it was hit', m, this);

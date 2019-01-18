@@ -1,11 +1,10 @@
 /* global document window */
-import Pew from './js/Pew';
+import Pew from './pew';
 
 /**
  * Class which receives a ship node and
  * functions to control movement and shooting
  */
-
 class Ship {
   // ship node
   constructor(space) {

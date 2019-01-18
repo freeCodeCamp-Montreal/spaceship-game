@@ -1,10 +1,13 @@
-# spaceship-game
+# Completed Spaceship Game :sparkles:
+
+## Requirements
+- Node LTS (https://nodejs.org/)
 
 ## Usage
 ```
-yarn
+npm install
 ```
 
 ```
-yarn start
+npm run start
 ```

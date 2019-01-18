@@ -6,34 +6,40 @@ import Pew from './pew';
  * functions to control movement and shooting
  */
 class Ship {
-  // ship node
+  /**
+   * Create attributes and assign default values to them
+   * @param {Element} space 
+   */
   constructor(space) {
+    // How much px our ship will move up and down. Feel free to change this
     this.step = 8;
+    // Assign a given space element to our class' attribute
     this.space = space;
-    this.ship = document.querySelector('.ship');
-    this.lives = 3;
+    // Determine the height of our space
     this.spaceHeight = space.offsetHeight;
-    console.log('== spaceHeight', space.offsetHeight);
+    // Select and assign a ship element
+    this.ship = document.querySelector('.ship');
     this.height = this.ship.height;
     this.width = this.ship.width;
+    // Default the ship to have 3 lives
+    this.lives = 3;
     this.start = null;
     this.topHolder = this.getPosition();
+
+    console.log('Height of space ⭐', space.offsetHeight);
+
   }
 
+  /**
+   * Get the top position of the ship. There are different ways to go about this,
+   * so for fun, here we use the computed style's top property (string), remove
+   * the px part of it and coerce it into a Number data type.
+   */
   getPosition() {
     const top = window.getComputedStyle(this.ship).getPropertyValue('top');
 
     return Number(top.substring(0, top.indexOf('px')));
   }
-
-  // step(timestamp) {
-  //   if (!this.start) this.start = timestamp;
-  //   const progress = timestamp - this.start;
-  //   this.ship.style.transform = `translateY(-${Math.min(progress / 10, this.topHolder - 5)}px)`;
-  //   if (progress < 2000) {
-  //     window.requestAnimationFrame(this.step);
-  //   }
-  // }
 
   moveUp() {
     const position = this.getPosition();
@@ -82,9 +88,9 @@ class Ship {
 
   isHit(monster) {
     return monster.left() < this.right() &&
-        monster.right() > this.left() &&
-        monster.top() < this.bottom() &&
-        monster.bottom() > this.top();
+      monster.right() > this.left() &&
+      monster.top() < this.bottom() &&
+      monster.bottom() > this.top();
   }
 
   loseLife() {

@@ -1,4 +1,4 @@
-/* global document window */
+/* global document window g */
 /**
  * The creatures our ship will shoot at
  */
@@ -10,6 +10,7 @@ module.exports = class Baddies {
     this.creature = document.createElement('img');
     this.creature.src = 'static/Creature2.svg';
     this.creature.className = 'baddie baddie-fades';
+    this.creature.id = `baddie-${g.baddies.length + 1}`
     const baddiesX = `${space.offsetWidth}px`;
     const baddiesY = `${Math.floor(Math.random() * space.offsetHeight)}px`;
     this.step = Math.floor(Math.random() * 4); //random number between 0 - 3
@@ -18,7 +19,6 @@ module.exports = class Baddies {
 
     this.space.appendChild(this.creature);
     this.move();
-    g.baddies.push(this);
   }
 
   move() {

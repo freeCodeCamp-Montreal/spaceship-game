@@ -1,4 +1,4 @@
-/* global document window */
+/* global document window g */
 /**
  * Pew pew node that our ship uses to kill alien blobs
  */
@@ -34,7 +34,12 @@ module.exports = class Pew {
   }
 
   isMonsterHit(monster) {
-    return monster.isHit(this);
+    const topOfMonster = window.parseInt(monster.style.top);
+    const leftOfMonster = window.parseInt(monster.style.left);
+    return this.left() < leftOfMonster + 60 &&
+        this.right() > leftOfMonster &&
+        this.top() < topOfMonster + 60 &&
+        this.bottom() > topOfMonster;
   }
 
   move() {
@@ -42,17 +47,14 @@ module.exports = class Pew {
       const x = window.parseInt(this.pew.style.left);
       const pewWidth = window.parseInt(window.getComputedStyle(this.pew).getPropertyValue('width'));
 
-      g.baddies.forEach( m => {
-        console.log(`monster at: ${m.top()}, ${m.left()} was`, this.isMonsterHit(m) ? 'hit' : 'not hit');
+      document.querySelectorAll('.baddie').forEach( (m, i) => {
         if (this.isMonsterHit(m)) {
-          m.creature.src = 'static/boom.svg';
-          m.creature.classList.remove('baddie');
-          m.creature.classList.add('baddie-died');
+          m.src = 'static/boom.svg';
+          m.classList.remove('baddie');
+          m.classList.add('baddie-died');
           this.pew.remove();
+          clearInterval(interval);
         }
-      //   if (m.isHit(this)) {
-      //     console.log('it was hit', m, this);
-      //   }
       });
 
       if (x + pewWidth >= this.space.offsetWidth) {

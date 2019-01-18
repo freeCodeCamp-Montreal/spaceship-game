@@ -35,11 +35,16 @@ function start() {
   g.stop = document.querySelector('.stop');
   g.space = document.querySelector('.space');
   g.Ship = new Ship(g.space);
+  g.gameOver = function (interval) {
+    Baddies.stop(interval);
+  };
 
   document.addEventListener('keydown', checkArrowPress);
 
   // creates monsters every 2100ms
-  this.monsterInterval = setInterval(() => { new Baddies(g.space); }, 3000);
+  // this.monsterInterval = setInterval(() => { new Baddies(g.Ship, g.space); }, 3000);
+  g.baddy = new Baddies(g.Ship, g.space);
+  g.baddy.move();
 }
 
 start();

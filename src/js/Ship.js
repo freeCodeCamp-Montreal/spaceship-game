@@ -65,6 +65,29 @@ class Ship {
     newPew.move();
   }
 
+  top() {
+    return window.parseInt(window.getComputedStyle(this.ship).getPropertyValue('top'));
+  }
+
+  bottom() {
+    return this.top() + 60;
+  }
+
+  left() {
+    return window.parseInt(window.getComputedStyle(this.ship).getPropertyValue('left'));
+  }
+
+  right() {
+    return this.left() + 60;
+  }
+
+  isHit(monster) {
+    return monster.left() < this.right() &&
+        monster.right() > this.left() &&
+        monster.top() < this.bottom() &&
+        monster.bottom() > this.top();
+  }
+
   loseLife() {
     if (this.lives === 0) {
       console.log('You Lose');

@@ -49,3 +49,11 @@
 	transform: rotate(45deg);
 	background-color: green;
 }
+
+.game-over-overlay {
+	font-size: 60px;
+	margin: auto;
+	width: 50%;
+	border: 3px solid green;
+	padding: 10px;
+}

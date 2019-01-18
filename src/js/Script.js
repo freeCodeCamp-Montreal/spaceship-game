@@ -37,15 +37,18 @@ function start() {
   g.Ship = new Ship(g.space);
   g.gameOver = function (interval) {
     document.querySelector('.game-over-overlay').style.display = 'block';
+    document.removeEventListener('keydown', checkArrowPress);
+    // clearInterval(g.monsterInterval); // This stop the creation of baddies, but it kinda looks fun :D
     Baddies.stop(interval);
   };
 
   document.addEventListener('keydown', checkArrowPress);
 
-  // creates monsters every 2100ms
-  // this.monsterInterval = setInterval(() => { new Baddies(g.Ship, g.space); }, 3000);
-  g.baddy = new Baddies(g.Ship, g.space);
-  g.baddy.move();
+  // creates monsters every 3000ms
+  g.monsterInterval = setInterval(() => { new Baddies(g.Ship, g.space); }, 3000);
+  // For testing purposes, baddy spawns in front of the ship
+  // g.baddy = new Baddies(g.Ship, g.space);
+  // g.baddy.move();
 }
 
 start();

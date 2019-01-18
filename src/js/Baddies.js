@@ -1,4 +1,4 @@
-/* global document window */
+/* global document window g */
 /**
  * The creatures our ship will shoot at
  */
@@ -12,7 +12,7 @@ module.exports = class Baddies {
     this.creature.src = 'static/Creature2.svg';
     this.creature.className = 'baddie baddie-fades';
     const baddiesX = `${space.offsetWidth}px`;
-    const baddiesY = '100px';//`${Math.floor(Math.random() * space.offsetHeight)}px`;
+    const baddiesY = `${Math.floor(Math.random() * space.offsetHeight)}px`;
     this.step = Math.floor(Math.random() * 4); //random number between 0 - 3
     this.creature.style.left = baddiesX;
     this.creature.style.top = baddiesY;
@@ -25,15 +25,16 @@ module.exports = class Baddies {
     this.baddyStepInterval = setInterval(() => {
       const x = window.parseInt(this.creature.style.left);
 
-      if (x <= 0) {
-        this.creature.remove();
-        window.clearInterval(this.baddyStepInterval);
-        return;
+      if (x <= 80) {
+        if (Array.from(this.creature.classList).includes('baddie-died')) {
+          this.creature.remove();
+          window.clearInterval(this.baddyStepInterval);
+        } else {
+          g.gameOver(this.baddyStepInterval); // this, if it worked, would only stop the current interval, all other badies will continue moving
+        }
       }
 
-      if (this.isShipHit(this.ship)) {
-        g.gameOver(this.baddyStepInterval);
-      }
+
 
       this.creature.style.left = `${x - ((this.step + 1) * 2)}px`;
     }, 100);

@@ -1,10 +1,13 @@
 # spaceship-game
 
+## Requirements
+- Node LTS (https://nodejs.org/)
+
 ## Usage
 ```
-yarn
+npm install
 ```
 
 ```
-yarn start
+npm run start
 ```

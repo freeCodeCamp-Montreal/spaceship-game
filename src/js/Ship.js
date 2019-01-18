@@ -1,4 +1,4 @@
-/* global window */
+/* global document window */
 import Pew from './js/Pew';
 
 /**
@@ -8,15 +8,15 @@ import Pew from './js/Pew';
 
 class Ship {
   // ship node
-  constructor(ship, space) {
+  constructor(space) {
     this.step = 8;
     this.space = space;
-    this.ship = ship;
+    this.ship = document.querySelector('.ship');
     this.lives = 3;
     this.spaceHeight = space.offsetHeight;
     console.log('== spaceHeight', space.offsetHeight);
-    this.height = ship.height;
-    this.width = ship.width;
+    this.height = this.ship.height;
+    this.width = this.ship.width;
     this.start = null;
     this.topHolder = this.getPosition();
   }

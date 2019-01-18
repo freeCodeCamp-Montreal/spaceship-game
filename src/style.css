@@ -51,9 +51,11 @@
 }
 
 .game-over-overlay {
+	display: none;
 	font-size: 60px;
 	margin: auto;
 	width: 50%;
-	border: 3px solid green;
+	border: 3px solid #AAA;
+	background-color: #CCC;
 	padding: 10px;
 }

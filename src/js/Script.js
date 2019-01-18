@@ -36,6 +36,7 @@ function start() {
   g.space = document.querySelector('.space');
   g.Ship = new Ship(g.space);
   g.gameOver = function (interval) {
+    document.querySelector('.game-over-overlay').style.display = 'block';
     Baddies.stop(interval);
   };
 

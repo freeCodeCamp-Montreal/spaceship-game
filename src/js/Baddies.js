@@ -32,8 +32,6 @@ module.exports = class Baddies {
       }
 
       if (this.isShipHit(this.ship)) {
-        const body = document.querySelector('body');
-        body.style.backgroundColor = 'red';
         g.gameOver(this.baddyStepInterval);
       }
 

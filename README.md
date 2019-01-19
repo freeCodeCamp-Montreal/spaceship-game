@@ -7,8 +7,11 @@ Notes: https://slides.com/tiffanyle-nguyen/intro-js-brebeufhx
 
 ## What to do now
 In your ship class, create functions that allow you to
-* Move it up ArrowUp (code: `38`) 
-* Move it down using ArrowDown (code: `40`)
+* Move it up
+* Move it down
+In `main.js` (or wherever your main code lives)
+* Add an event listener that listens for `keydown`
+* Add a function which handles ArrowUp (code: `38`) and ArrowDown (code: `40`)
 
 ## Requirements
 - Node LTS (https://nodejs.org/)

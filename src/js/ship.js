@@ -13,7 +13,6 @@ class Ship {
     this.height = this.ship.height;
     this.width = this.ship.width;
   }
-
 }
 
 module.exports = Ship;

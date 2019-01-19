@@ -47,16 +47,6 @@ module.exports = class Pew {
       const x = window.parseInt(this.pew.style.left);
       const pewWidth = window.parseInt(window.getComputedStyle(this.pew).getPropertyValue('width'));
 
-      document.querySelectorAll('.baddie').forEach( (m, i) => {
-        if (this.isMonsterHit(m)) {
-          m.src = 'static/boom.svg';
-          m.classList.remove('baddie');
-          m.classList.add('baddie-died');
-          this.pew.remove();
-          clearInterval(interval);
-        }
-      });
-
       if (x + pewWidth >= this.space.offsetWidth) {
         this.pew.remove();
         clearInterval(interval);

@@ -60,12 +60,8 @@ function start() {
   // and run the function given
   document.addEventListener('keydown', checkArrowPress);
 
-  // creates monsters every 3000ms
-  g.monsterInterval = setInterval(() => { new Creature(g.Ship, g.space); }, 3000);
-  
   // For testing purposes, baddy spawns in front of the ship
-  // g.baddy = new Baddies(g.Ship, g.space);
-  // g.baddy.move();
+  g.baddy = new Creature(g.Ship, g.space);
 }
 
 // Run the start function

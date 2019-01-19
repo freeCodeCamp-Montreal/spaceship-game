@@ -13,6 +13,7 @@ We want to make it shoot lasers (we call them pews) :gun:!
 * In your constructor, create an `img` element using `src/static/Pew.svg`. 
   * Give it the `pew` class. 
   * Append it to your space div
+* Create a `move` function, which moves the laser from left to right
 
 ## Requirements
 - Node LTS (https://nodejs.org/)

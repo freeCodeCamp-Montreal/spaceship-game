@@ -36,10 +36,10 @@ module.exports = class Pew {
   isMonsterHit(monster) {
     const topOfMonster = window.parseInt(monster.style.top);
     const leftOfMonster = window.parseInt(monster.style.left);
-    return this.left() < leftOfMonster + 60 &&
-        this.right() > leftOfMonster &&
-        this.top() < topOfMonster + 60 &&
-        this.bottom() > topOfMonster;
+    return this.left() < leftOfMonster + 60
+      && this.right() > leftOfMonster
+      && this.top() < topOfMonster + 60
+      && this.bottom() > topOfMonster;
   }
 
   move() {

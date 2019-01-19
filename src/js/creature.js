@@ -1,4 +1,4 @@
-/* global document window g */
+/* global document window */
 /**
  * The creatures our ship will shoot at 👽
  */
@@ -15,7 +15,7 @@ module.exports = class Creature {
     this.width = 60;
     // Create element that represents our creature
     this.creature = document.createElement('img');
-    this.creature.src = 'static/Creature2.svg';
+    this.creature.src = 'static/Creature.svg';
     // Assign them the baddie and baddie-fades classes
     this.creature.className = 'baddie baddie-fades';
     // How fast the creature moves
@@ -50,5 +50,4 @@ module.exports = class Creature {
   right() {
     return this.left() + 60;
   }
-
 };

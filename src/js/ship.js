@@ -8,7 +8,7 @@ import Pew from './pew';
 class Ship {
   /**
    * Create attributes and assign default values to them
-   * @param {Element} space 
+   * @param {Element} space
    */
   constructor(space) {
     // How much px our ship will move up and down. Feel free to change this
@@ -27,7 +27,6 @@ class Ship {
     this.topHolder = this.getPosition();
 
     console.log('Height of space ⭐', space.offsetHeight);
-
   }
 
   /**
@@ -72,7 +71,9 @@ class Ship {
   }
 
   top() {
-    return window.parseInt(window.getComputedStyle(this.ship).getPropertyValue('top'));
+    return window.parseInt(
+      window.getComputedStyle(this.ship).getPropertyValue('top'),
+    );
   }
 
   bottom() {
@@ -80,7 +81,9 @@ class Ship {
   }
 
   left() {
-    return window.parseInt(window.getComputedStyle(this.ship).getPropertyValue('left'));
+    return window.parseInt(
+      window.getComputedStyle(this.ship).getPropertyValue('left'),
+    );
   }
 
   right() {
@@ -89,13 +92,15 @@ class Ship {
 
   /**
    * Checks if the ship was hit by a creature
-   * @param {Creature} creature 
+   * @param {Creature} creature
    */
   isHit(creature) {
-    return creature.left() < this.right() &&
-      creature.right() > this.left() &&
-      creature.top() < this.bottom() &&
-      creature.bottom() > this.top();
+    return (
+      creature.left() < this.right()
+      && creature.right() > this.left()
+      && creature.top() < this.bottom()
+      && creature.bottom() > this.top()
+    );
   }
 
   // Lose a life and print out a losing message if we are at 0 lives

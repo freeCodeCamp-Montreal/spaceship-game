@@ -1,12 +1,12 @@
-/* global document window g*/
+/* global document window g */
 /**
  * The creatures our ship will shoot at 👽
  */
 module.exports = class Creature {
   /**
-   * 
-   * @param {Ship} ship 
-   * @param {Element} space 
+   *
+   * @param {Ship} ship
+   * @param {Element} space
    */
   constructor(ship, space) {
     this.space = space;
@@ -20,7 +20,7 @@ module.exports = class Creature {
     // Assign them the baddie and baddie-fades classes
     this.creature.className = 'baddie baddie-fades';
     // How fast the creature moves
-    this.step = Math.floor(Math.random() * 4); //random number between 0 - 3
+    this.step = Math.floor(Math.random() * 4); // random number between 0 - 3
     // Creature's position from the right (all the way to the right of the space)
     this.creature.style.right = '0px';
     // Creature's position from the top
@@ -55,12 +55,12 @@ module.exports = class Creature {
       if (x <= 80 && y < hitBoxMax && y > hitBoxMin) {
         // this, if it worked, would only stop the current interval, all other badies will continue moving
         if (this.ship.lives === 0) {
-          g.gameOver(this.baddyStepInterval)
+          g.gameOver(this.baddyStepInterval);
         } else {
           this.ship.loseLife();
-          this.creature.src = "static/boom.svg"
-          this.creature.classList.add("baddie-died");
-          console.log(this.ship.lives)
+          this.creature.src = 'static/boom.svg';
+          this.creature.classList.add('baddie-died');
+          console.log(this.ship.lives);
         }
       }
 
@@ -89,9 +89,9 @@ module.exports = class Creature {
   }
 
   isShipHit(ship) {
-    return this.left() < ship.right() &&
-      this.right() > ship.left() &&
-      this.top() < ship.bottom() &&
-      this.bottom() > ship.top();
+    return this.left() < ship.right()
+      && this.right() > ship.left()
+      && this.top() < ship.bottom()
+      && this.bottom() > ship.top();
   }
 };

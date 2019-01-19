@@ -41,17 +41,17 @@ class Ship {
     return Number(top.substring(0, top.indexOf('px')));
   }
 
+  // Move the ship up from its current position
   moveUp() {
     const position = this.getPosition();
 
     // If it's at the top, don't move the ship
     if (position <= 0) return;
 
-    // window.requestAnimationFrame(this.step);
-
     this.ship.style.top = `${position - this.step}px`;
   }
 
+  // Move the ship down from its current position
   moveDown() {
     const position = this.getPosition();
 
@@ -60,6 +60,7 @@ class Ship {
     this.ship.style.top = `${position + this.step}px`;
   }
 
+  // Shoot a laser
   shoot() {
     const x = window.getComputedStyle(this.ship).getPropertyValue('left');
     const y = window.getComputedStyle(this.ship).getPropertyValue('top');
@@ -86,13 +87,18 @@ class Ship {
     return this.left() + 60;
   }
 
-  isHit(monster) {
-    return monster.left() < this.right() &&
-      monster.right() > this.left() &&
-      monster.top() < this.bottom() &&
-      monster.bottom() > this.top();
+  /**
+   * Checks if the ship was hit by a creature
+   * @param {Creature} creature 
+   */
+  isHit(creature) {
+    return creature.left() < this.right() &&
+      creature.right() > this.left() &&
+      creature.top() < this.bottom() &&
+      creature.bottom() > this.top();
   }
 
+  // Lose a life and print out a losing message if we are at 0 lives
   loseLife() {
     if (this.lives === 0) {
       console.log('You Lose');

@@ -36,10 +36,10 @@ module.exports = class Pew {
   isMonsterHit(monster) {
     const topOfMonster = window.parseInt(monster.style.top);
     const leftOfMonster = window.parseInt(monster.style.left);
-    return this.left() < leftOfMonster + 60 &&
-        this.right() > leftOfMonster &&
-        this.top() < topOfMonster + 60 &&
-        this.bottom() > topOfMonster;
+    return this.left() < leftOfMonster + 60
+      && this.right() > leftOfMonster
+      && this.top() < topOfMonster + 60
+      && this.bottom() > topOfMonster;
   }
 
   move() {
@@ -47,7 +47,7 @@ module.exports = class Pew {
       const x = window.parseInt(this.pew.style.left);
       const pewWidth = window.parseInt(window.getComputedStyle(this.pew).getPropertyValue('width'));
 
-      document.querySelectorAll('.baddie').forEach( (m, i) => {
+      document.querySelectorAll('.baddie').forEach((m, i) => {
         if (this.isMonsterHit(m)) {
           m.src = 'static/boom.svg';
           m.classList.remove('baddie');

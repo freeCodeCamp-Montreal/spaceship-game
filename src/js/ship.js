@@ -8,7 +8,7 @@ import Pew from './pew';
 class Ship {
   /**
    * Create attributes and assign default values to them
-   * @param {Element} space 
+   * @param {Element} space
    */
   constructor(space) {
     // How much px our ship will move up and down. Feel free to change this
@@ -27,7 +27,6 @@ class Ship {
     this.topHolder = this.getPosition();
 
     console.log('Height of space ⭐', space.offsetHeight);
-
   }
 
   /**
@@ -87,10 +86,10 @@ class Ship {
   }
 
   isHit(monster) {
-    return monster.left() < this.right() &&
-      monster.right() > this.left() &&
-      monster.top() < this.bottom() &&
-      monster.bottom() > this.top();
+    return monster.left() < this.right()
+      && monster.right() > this.left()
+      && monster.top() < this.bottom()
+      && monster.bottom() > this.top();
   }
 
   loseLife() {

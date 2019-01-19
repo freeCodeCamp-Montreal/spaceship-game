@@ -5,6 +5,11 @@ At this point, we've created a ship to navigate and put it in the DOM.
 
 Notes: https://slides.com/tiffanyle-nguyen/intro-js-brebeufhx
 
+## What to do now
+In your ship class, create functions that allow you to
+* Move it up ArrowUp (code: `38`) 
+* Move it down using ArrowDown (code: `40`)
+
 ## Requirements
 - Node LTS (https://nodejs.org/)
 

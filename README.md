@@ -10,6 +10,9 @@ Notes: https://slides.com/tiffanyle-nguyen/intro-js-brebeufhx
 ## Requirements
 - Node LTS (https://nodejs.org/)
 
+## What to do now
+Almost done! We just want the creatures to spawn at random intervals now (`setInterval` and `Math.random`). You can also take the time to make our ship lose lives on contact or when the creatures get to the edge of the screen without dying.
+
 ## Usage
 ### Install dependencies (only once)
 ```

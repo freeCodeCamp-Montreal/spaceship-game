@@ -4,7 +4,6 @@
  */
 module.exports = class Creature {
   /**
-   * 
    * @param {Ship} ship 
    * @param {Element} space 
    */
@@ -20,11 +19,11 @@ module.exports = class Creature {
     // Assign them the baddie and baddie-fades classes
     this.creature.className = 'baddie baddie-fades';
     // How fast the creature moves
-    this.step = Math.floor(Math.random() * 4); //random number between 0 - 3
+    this.step = 4; // Math.floor(Math.random() * 4); // random number between 0 - 3
     // Creature's position from the right (all the way to the right of the space)
-    this.creature.style.right = '0px';
+    this.creature.style.left = '350px';
     // Creature's position from the top
-    this.creature.style.top = `${Math.floor(Math.random() * space.offsetHeight)}px`;
+    this.creature.style.top = `${100}px`; // `${Math.floor(Math.random() * space.offsetHeight)}px`;
 
     // Add the creature we just made to our game
     this.space.appendChild(this.creature);

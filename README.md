@@ -1,5 +1,5 @@
 # We've created spooky creatures
-Just a circle and a triangle? That's crazy talk. You should now have creatures in your DOM showing up at random intervals. **Let's make them move towards our ship**
+Just a circle and a triangle? That's crazy talk. You should now have a creature class (or function) that can be appended to your DOM. **Let's make them move towards our ship**
 
 <img src="https://github.com/sirMerr/spaceship-game/blob/master/src/static/Creature.svg" width=150/>
 

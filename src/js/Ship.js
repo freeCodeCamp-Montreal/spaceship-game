@@ -27,7 +27,6 @@ class Ship {
     this.topHolder = this.getPosition();
 
     console.log('Height of space ⭐', space.offsetHeight);
-
   }
 
   /**
@@ -86,21 +85,6 @@ class Ship {
     return this.left() + 60;
   }
 
-  isHit(monster) {
-    return monster.left() < this.right() &&
-      monster.right() > this.left() &&
-      monster.top() < this.bottom() &&
-      monster.bottom() > this.top();
-  }
-
-  loseLife() {
-    if (this.lives === 0) {
-      console.log('You Lose');
-      return;
-    }
-
-    this.lives -= 1;
-  }
 }
 
 module.exports = Ship;

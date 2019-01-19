@@ -1,5 +1,4 @@
 /* global document */
-import Creature from './js/creature.js';
 import Ship from './js/ship.js';
 
 // Holds global elements
@@ -47,25 +46,9 @@ function start() {
   // Create a new instance of our ship
   g.Ship = new Ship(g.space);
 
-  // Arrow function that handles a game over state
-  g.gameOver = (interval) => {
-    document.querySelector('.game-over-overlay').style.display = 'block';
-    document.removeEventListener('keydown', checkArrowPress);
-    // This stop the creation of baddies, but it kinda looks fun when disabled :D
-    clearInterval(g.monsterInterval);
-    Creature.stop(interval);
-  };
-
   // Event listeners will listen for specific events (keydown)
   // and run the function given
   document.addEventListener('keydown', checkArrowPress);
-
-  // creates monsters every 3000ms
-  g.monsterInterval = setInterval(() => { new Creature(g.Ship, g.space); }, 3000);
-  
-  // For testing purposes, baddy spawns in front of the ship
-  // g.baddy = new Baddies(g.Ship, g.space);
-  // g.baddy.move();
 }
 
 // Run the start function

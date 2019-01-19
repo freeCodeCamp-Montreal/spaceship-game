@@ -5,6 +5,13 @@ The ship goes pew.
 
 Notes: https://slides.com/tiffanyle-nguyen/intro-js-brebeufhx
 
+## What to do now
+Now we want to create the creatures
+- Create a `Creature` class
+- Like before, create a constructor which creates and appends an alien (`src/static/Creature.svg`).
+  - The creature should be created to the right of the screen (`right:0`)
+  - Use `Math.random` to randomnly determine where the creature will appear on the y-axis
+
 ## Requirements
 - Node LTS (https://nodejs.org/)
 

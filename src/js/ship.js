@@ -8,7 +8,7 @@ import Pew from './pew';
 class Ship {
   /**
    * Create attributes and assign default values to them
-   * @param {Element} space 
+   * @param {Element} space
    */
   constructor(space) {
     // How much px our ship will move up and down. Feel free to change this
@@ -84,7 +84,6 @@ class Ship {
   right() {
     return this.left() + 60;
   }
-
 }
 
 module.exports = Ship;

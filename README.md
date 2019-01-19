@@ -5,6 +5,15 @@ At this point, we've made it so the ship can move up and down using keycodes and
 
 Notes: https://slides.com/tiffanyle-nguyen/intro-js-brebeufhx
 
+## What to do now
+We want to make it shoot lasers (we call them pews) :gun:!
+
+* Create a `Pew` class.
+* Create the constructor. It should accept a reference to your ship (for positioning) and a reference to your space.
+* In your constructor, create an `img` element using `src/static/Pew.svg`. 
+  * Give it the `pew` class. 
+  * Append it to your space div
+
 ## Requirements
 - Node LTS (https://nodejs.org/)
 

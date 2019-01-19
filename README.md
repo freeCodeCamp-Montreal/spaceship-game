@@ -8,6 +8,13 @@ your game should look something like this:
 
 Notes: https://slides.com/tiffanyle-nguyen/intro-js-brebeufhx
 
+## What to do
+- Follow the installations steps below
+- Create a `Ship` class with default attributes in a constructor
+- Create the spaceship in the DOM (we give you an image of the ship: `src/static/Spaceship.svg`), either directly in the HTML
+or in your constructor.
+- Instantiate an instance of your `Ship`
+
 ## Requirements
 - Node LTS (https://nodejs.org/)
 

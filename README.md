@@ -3,7 +3,7 @@ At this point, we've created a ship to navigate and put it in the DOM.
 
 ![](https://github.com/sirMerr/spaceship-game/blob/1.creation_vaisseau/src/static/Spaceship.svg)
 
-Notes: https://slides.com/tiffanyle-nguyen/intro-js-brebeufhx
+Notes: https://slides.com/tiffanyle-nguyen/intro-js
 
 ## What to do now
 In your ship class, create functions that allow you to

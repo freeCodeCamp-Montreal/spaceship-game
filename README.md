@@ -6,7 +6,7 @@ your game should look something like this:
 
 ... without the lives, scoring and aliens shooting lasers back at you ;). Those would be next steps if you want to continue making and optimizing this game.
 
-Notes: https://slides.com/tiffanyle-nguyen/intro-js-brebeufhx
+Notes: https://slides.com/tiffanyle-nguyen/intro-js
 
 ## What to do
 - Follow the installations steps below

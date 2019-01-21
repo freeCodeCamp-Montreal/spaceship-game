@@ -8,7 +8,10 @@ your game should look something like this:
 
 ... without the lives, scoring and aliens shooting lasers back at you ;). Those would be next steps if you want to continue making and optimizing this game.
 
-Notes: https://slides.com/tiffanyle-nguyen/intro-js-brebeufhx
+Notes: https://slides.com/tiffanyle-nguyen/intro-js
+
+## What to do next
+You can now implement lives, scoring and aliens shooting back. You can make the aliens and your ship move in more than one direction. You can remake the entire thing in React or Vue. You can use `canvas`. You can use an actual game engine. You can optimize this game using `requestAnimationFrame` or better algorithms. It's up to you :)
 
 ## Requirements
 - Node LTS (https://nodejs.org/)

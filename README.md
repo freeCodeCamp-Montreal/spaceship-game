@@ -3,7 +3,7 @@ Just a circle and a triangle? That's crazy talk. You should now have a creature 
 
 <img src="https://github.com/sirMerr/spaceship-game/blob/master/src/static/Creature.svg" width=150/>
 
-Notes: https://slides.com/tiffanyle-nguyen/intro-js-brebeufhx
+Notes: https://slides.com/tiffanyle-nguyen/intro-js
 
 ## What to do now
 Let's make them move towards our ship! Same thing as for the laser, but for our creature, but with collision.

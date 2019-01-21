@@ -3,7 +3,7 @@ The ship goes pew.
 
 <img src="https://user-images.githubusercontent.com/11183523/51428433-972e0080-1bd1-11e9-98ba-fe47d3f902bf.gif" width=350/>
 
-Notes: https://slides.com/tiffanyle-nguyen/intro-js-brebeufhx
+Notes: https://slides.com/tiffanyle-nguyen/intro-js
 
 ## What to do now
 Now we want to create the creatures

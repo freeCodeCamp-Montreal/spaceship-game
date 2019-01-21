@@ -5,7 +5,7 @@ Alright, we're pretty much at the finish line! We want them to spawn randomnly n
 This next one isn't as clear due to how this branch was made with the creature showing up immediately, but you get the point.
 <img src="https://user-images.githubusercontent.com/11183523/51428482-35ba6180-1bd2-11e9-9d73-0fd6de4b0082.gif" width=300/>
 
-Notes: https://slides.com/tiffanyle-nguyen/intro-js-brebeufhx
+Notes: https://slides.com/tiffanyle-nguyen/intro-js
 
 ## Requirements
 - Node LTS (https://nodejs.org/)

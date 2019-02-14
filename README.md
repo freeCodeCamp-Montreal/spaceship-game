@@ -22,6 +22,4 @@ Let's make them move towards our ship! Same thing as for the laser, but for our 
 
 ## Usage
 
-### Install dependencies (only once)
-
 Open `index.html` in the modern browser of your choosing from the downloaded/cloned repository.

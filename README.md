@@ -21,6 +21,4 @@ Now we want to create the creatures
 
 ## Usage
 
-### Install dependencies (only once)
-
 Open `index.html` in the modern browser of your choosing from the downloaded/cloned repository.

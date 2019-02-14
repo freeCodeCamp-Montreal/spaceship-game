@@ -2,7 +2,7 @@
 /**
  * The creatures our ship will shoot at 👽
  */
-module.exports = class Creature {
+class Creature {
   /**
    * @param {Ship} ship
    * @param {Element} space
@@ -88,9 +88,9 @@ module.exports = class Creature {
   }
 
   isShipHit(ship) {
-    return this.left() < ship.right()
-      && this.right() > ship.left()
-      && this.top() < ship.bottom()
-      && this.bottom() > ship.top();
+    return this.left() < ship.right() &&
+      this.right() > ship.left() &&
+      this.top() < ship.bottom() &&
+      this.bottom() > ship.top();
   }
 };

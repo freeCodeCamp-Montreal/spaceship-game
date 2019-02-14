@@ -1,4 +1,5 @@
 # Start of the Spaceship Game
+
 Welcome! This is the starting point. This workshop will set you on the right path to make a spaceship game in HTML/CSS/JavaScript. At the end of it,
 your game should look something like this:
 
@@ -9,25 +10,19 @@ your game should look something like this:
 Notes: https://slides.com/tiffanyle-nguyen/intro-js
 
 ## What to do
+
 - Follow the installations steps below
 - Create a `Ship` class with default attributes in a constructor
 - Create the spaceship in the DOM (we give you an image of the ship: `src/static/Spaceship.svg`), either directly in the HTML
-or in your constructor. 
+  or in your constructor.
   - Your ship should be all the way to the left.
 - Instantiate an instance of your `Ship`
 - Make sure when you run the game, your ship is there and is at 0 on the x-axis (all the way to the left)
 
 ## Requirements
-- Node LTS (https://nodejs.org/)
+
+- Clone/Download this repository and use this branch
 
 ## Usage
-### Install dependencies (only once)
-```
-npm install
-```
 
-### Run the game (whenever you want to run it)
-```
-npm run start
-```
-To stop the run, use `CTRL + C` or `CMD + C`
+Open `index.html` in the modern browser of your choosing from the downloaded/cloned repository.

@@ -2,7 +2,7 @@
 /**
  * The creatures our ship will shoot at 👽
  */
-module.exports = class Creature {
+class Creature {
   /**
    * @param {Ship} ship
    * @param {Element} space

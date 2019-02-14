@@ -1,5 +1,4 @@
 /* global document window */
-import Pew from './pew';
 
 /**
  * Class which receives a ship node and
@@ -86,10 +85,10 @@ class Ship {
   }
 
   isHit(monster) {
-    return monster.left() < this.right()
-      && monster.right() > this.left()
-      && monster.top() < this.bottom()
-      && monster.bottom() > this.top();
+    return monster.left() < this.right() &&
+      monster.right() > this.left() &&
+      monster.top() < this.bottom() &&
+      monster.bottom() > this.top();
   }
 
   loseLife() {
@@ -101,5 +100,3 @@ class Ship {
     this.lives -= 1;
   }
 }
-
-module.exports = Ship;

@@ -5,8 +5,8 @@
 
 .space {
 	background-color: #112B42;
-	height: 800px;
-	width: 800px;
+	height: 100vh;
+	width: 80vw;
 }
 
 .ship {
@@ -35,7 +35,8 @@
 }
 
 .baddie-died {
-	opacity: 0; /*applies the baddie-fades transition */
+	opacity: 0;
+	/*applies the baddie-fades transition */
 	position: absolute;
 	width: 60px;
 	height: 60px;

@@ -1,5 +1,4 @@
 /* global document window */
-import Pew from './pew';
 
 /**
  * Class which receives a ship node and
@@ -85,5 +84,3 @@ class Ship {
     return this.left() + 60;
   }
 }
-
-module.exports = Ship;

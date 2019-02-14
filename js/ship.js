@@ -14,5 +14,3 @@ class Ship {
     this.width = this.ship.width;
   }
 }
-
-module.exports = Ship;

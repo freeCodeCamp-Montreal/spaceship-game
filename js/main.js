@@ -1,5 +1,4 @@
 /* global document */
-import Ship from './js/ship.js';
 
 // Holds global elements
 const g = {};
@@ -11,13 +10,13 @@ const g = {};
  * game over condition.
  */
 function start() {
-  // Assign values (which happen to be nodes) to these global keys
-  // querySelector returns the first element that is a descendant of
-  // the node that matches selectors.
-  g.space = document.querySelector('.space');
+	// Assign values (which happen to be nodes) to these global keys
+	// querySelector returns the first element that is a descendant of
+	// the node that matches selectors.
+	g.space = document.querySelector('.space');
 
-  // Create a new instance of our ship
-  g.Ship = new Ship(g.space);
+	// Create a new instance of our ship
+	g.Ship = new Ship(g.space);
 }
 
 // Run the start function

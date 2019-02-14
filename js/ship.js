@@ -1,6 +1,4 @@
 /* global document window */
-import Pew from './pew';
-
 /**
  * Class which receives a ship node and
  * functions to control movement and shooting
@@ -96,10 +94,10 @@ class Ship {
    */
   isHit(creature) {
     return (
-      creature.left() < this.right()
-      && creature.right() > this.left()
-      && creature.top() < this.bottom()
-      && creature.bottom() > this.top()
+      creature.left() < this.right() &&
+      creature.right() > this.left() &&
+      creature.top() < this.bottom() &&
+      creature.bottom() > this.top()
     );
   }
 
@@ -113,5 +111,3 @@ class Ship {
     this.lives -= 1;
   }
 }
-
-module.exports = Ship;

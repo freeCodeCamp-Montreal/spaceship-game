@@ -1,7 +1,4 @@
 /* global document */
-import Creature from './js/creature.js';
-import Ship from './js/ship.js';
-
 // Holds global elements
 const g = {};
 

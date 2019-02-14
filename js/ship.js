@@ -55,5 +55,3 @@ class Ship {
     return this.left() + 60;
   }
 }
-
-module.exports = Ship;

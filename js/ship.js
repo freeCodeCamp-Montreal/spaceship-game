@@ -13,16 +13,17 @@ class Ship {
     this.spaceHeight = space.offsetHeight;
     this.height = this.ship.height;
     this.width = this.ship.width;
+    this.ship.style.top = "0px";
   }
 
   getPosition() {
-    const top = window.getComputedStyle(this.ship).getPropertyValue('top');
+    const top = this.ship.style.top;
 
-    return Number(top.substring(0, top.indexOf('px')));
+    return parseInt(top);
   }
 
   moveUp() {
-    const position = this.top();
+    const position = this.getPosition();
 
     // If it's at the top, don't move the ship
     if (position <= 0) return;
@@ -31,7 +32,7 @@ class Ship {
   }
 
   moveDown() {
-    const position = this.top();
+    const position = this.getPosition();
 
     // If the bottom of the ship is already at the bottom, don't move
     if (position >= this.spaceHeight - this.height) return;

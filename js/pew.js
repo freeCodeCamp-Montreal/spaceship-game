@@ -1,4 +1,5 @@
-/* global document window */
+/* eslint-disable radix */
+/* global document */
 /**
  * Pew pew node that our ship uses to kill alien blobs
  */
@@ -11,14 +12,14 @@ class Pew {
     this.space = space;
 
     const pewsX = `${20 + this.ship.width}px`;
-    const pewsY = `${(window.parseInt(y) + (this.ship.height / 2)) - 2}px`;
+    const pewsY = `${(parseInt(y) + (this.ship.height / 2)) - 2}px`;
     console.log(`pews fire from x:${pewsX} and y:${pewsY}`);
     this.pew.style.left = pewsX;
     this.pew.style.top = pewsY;
   }
 
   top() {
-    return window.parseInt(this.pew.style.top);
+    return parseInt(this.pew.style.top);
   }
 
   bottom() {
@@ -26,7 +27,7 @@ class Pew {
   }
 
   left() {
-    return window.parseInt(this.pew.style.left);
+    return parseInt(this.pew.style.left);
   }
 
   right() {
@@ -34,18 +35,18 @@ class Pew {
   }
 
   isMonsterHit(monster) {
-    const topOfMonster = window.parseInt(monster.style.top);
-    const leftOfMonster = window.parseInt(monster.style.left);
-    return this.left() < leftOfMonster + 60 &&
-      this.right() > leftOfMonster &&
-      this.top() < topOfMonster + 60 &&
-      this.bottom() > topOfMonster;
+    const topOfMonster = parseInt(monster.style.top);
+    const leftOfMonster = parseInt(monster.style.left);
+    return this.left() < leftOfMonster + 60
+      && this.right() > leftOfMonster
+      && this.top() < topOfMonster + 60
+      && this.bottom() > topOfMonster;
   }
 
   move() {
     const interval = setInterval(() => {
-      const x = window.parseInt(this.pew.style.left);
-      const pewWidth = window.parseInt(window.getComputedStyle(this.pew).getPropertyValue('width'));
+      const x = parseInt(this.pew.style.left);
+      const pewWidth = parseInt(this.pew.style.width);
 
       document.querySelectorAll('.baddie').forEach((m) => {
         if (this.isMonsterHit(m)) {
@@ -66,4 +67,4 @@ class Pew {
       this.pew.style.left = `${x + 8}px`;
     }, 10);
   }
-};
+}

@@ -89,9 +89,9 @@ class Creature {
   }
 
   isShipHit(ship) {
-    return this.left() < ship.right() &&
-      this.right() > ship.left() &&
-      this.top() < ship.bottom() &&
-      this.bottom() > ship.top();
+    return this.left() < ship.right()
+      && this.right() > ship.left()
+      && this.top() < ship.bottom()
+      && this.bottom() > ship.top();
   }
-};
+}

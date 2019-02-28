@@ -1,4 +1,4 @@
-/* global document window */
+/* global document window Pew */
 
 /**
  * Class which receives a ship node and
@@ -85,10 +85,10 @@ class Ship {
   }
 
   isHit(monster) {
-    return monster.left() < this.right() &&
-      monster.right() > this.left() &&
-      monster.top() < this.bottom() &&
-      monster.bottom() > this.top();
+    return monster.left() < this.right()
+      && monster.right() > this.left()
+      && monster.top() < this.bottom()
+      && monster.bottom() > this.top();
   }
 
   loseLife() {

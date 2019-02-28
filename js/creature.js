@@ -1,4 +1,5 @@
-/* global document window */
+/* eslint-disable radix */
+/* global document */
 /**
  * The creatures our ship will shoot at 👽
  */
@@ -21,6 +22,7 @@ class Creature {
     // How fast the creature moves
     this.step = 4; // Math.floor(Math.random() * 4); // random number between 0 - 3
     // Creature's position from the right (all the way to the right of the space)
+    // We hardcode this, but you don't have to
     this.creature.style.left = '350px';
     // Creature's position from the top
     this.creature.style.top = `${100}px`; // `${Math.floor(Math.random() * space.offsetHeight)}px`;
@@ -31,23 +33,21 @@ class Creature {
     // this.move();
   }
 
-  static stop(interval) {
-    window.clearInterval(interval);
-  }
-
   top() {
-    return window.parseInt(window.getComputedStyle(this.creature).getPropertyValue('top'));
+    return parseInt(this.creature.style.top);
   }
 
   bottom() {
+    // 60 is the height of the creature which we hardcode here
     return this.top() + 60;
   }
 
   left() {
-    return window.parseInt(window.getComputedStyle(this.creature).getPropertyValue('left'));
+    return parseInt(this.creature.style.left);
   }
 
   right() {
+    // 60 is the width of the creature which we hardcode here
     return this.left() + 60;
   }
-};
+}

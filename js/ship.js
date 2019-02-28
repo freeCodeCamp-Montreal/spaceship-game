@@ -1,4 +1,5 @@
-/* global document window */
+/* eslint-disable radix */
+/* global document */
 
 /**
  * Class which receives a ship node and
@@ -13,11 +14,12 @@ class Ship {
     this.spaceHeight = space.offsetHeight;
     this.height = this.ship.height;
     this.width = this.ship.width;
-    this.ship.style.top = "0px";
+    this.ship.style.top = '0px';
   }
 
   getPosition() {
-    const top = this.ship.style.top;
+    // This is the same as doing const top = this.ship.style.top
+    const { top } = this.ship.style;
 
     return parseInt(top);
   }
@@ -41,15 +43,16 @@ class Ship {
   }
 
   top() {
-    return window.parseInt(window.getComputedStyle(this.ship).getPropertyValue('top'));
+    return parseInt(this.ship.style.top);
   }
 
   bottom() {
+    // 60 is the width of the ship. We hardcode it for convenience.
     return this.top() + 60;
   }
 
   left() {
-    return window.parseInt(window.getComputedStyle(this.ship).getPropertyValue('left'));
+    return parseInt(this.ship.style.left);
   }
 
   right() {

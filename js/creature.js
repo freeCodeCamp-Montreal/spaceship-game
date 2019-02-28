@@ -1,4 +1,5 @@
-/* global document window g */
+/* eslint-disable radix */
+/* global document g */
 /**
  * The creatures our ship will shoot at 👽
  */
@@ -40,7 +41,7 @@ class Creature {
       // If the creature died, remove from the DOM and clear our interval
       if (Array.from(this.creature.classList).includes('baddie-died')) {
         this.creature.remove();
-        window.clearInterval(this.baddyStepInterval);
+        clearInterval(this.baddyStepInterval);
       }
 
       const x = this.left();
@@ -49,6 +50,8 @@ class Creature {
       // Hit box (y axis) where the creature would hit our ship
       const hitBoxMax = this.ship.height + this.ship.top();
       const hitBoxMin = this.ship.top() - this.ship.height;
+
+      console.log(hitBoxMax, hitBoxMin);
 
       // 80 represents the x position of our ship
       if (x <= 80 && y < hitBoxMax && y > hitBoxMin) {
@@ -67,12 +70,8 @@ class Creature {
     }, 100);
   }
 
-  static stop(interval) {
-    window.clearInterval(interval);
-  }
-
   top() {
-    return window.parseInt(window.getComputedStyle(this.creature).getPropertyValue('top'));
+    return parseInt(this.creature.style.top);
   }
 
   bottom() {
@@ -80,7 +79,7 @@ class Creature {
   }
 
   left() {
-    return window.parseInt(window.getComputedStyle(this.creature).getPropertyValue('left'));
+    return parseInt(this.creature.style.left);
   }
 
   right() {
@@ -88,9 +87,9 @@ class Creature {
   }
 
   isShipHit(ship) {
-    return this.left() < ship.right() &&
-      this.right() > ship.left() &&
-      this.top() < ship.bottom() &&
-      this.bottom() > ship.top();
+    return this.left() < ship.right()
+      && this.right() > ship.left()
+      && this.top() < ship.bottom()
+      && this.bottom() > ship.top();
   }
-};
+}

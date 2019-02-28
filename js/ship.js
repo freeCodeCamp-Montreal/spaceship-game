@@ -1,4 +1,5 @@
-/* global document window */
+/* eslint-disable radix */
+/* global document window Pew */
 
 /**
  * Class which receives a ship node and
@@ -18,6 +19,7 @@ class Ship {
     this.spaceHeight = space.offsetHeight;
     // Select and assign a ship element
     this.ship = document.querySelector('.ship');
+    this.ship.style.top = 0;
     this.height = this.ship.height;
     this.width = this.ship.width;
     // Default the ship to have 3 lives
@@ -69,7 +71,7 @@ class Ship {
   }
 
   top() {
-    return window.parseInt(window.getComputedStyle(this.ship).getPropertyValue('top'));
+    return parseInt(this.ship.style.top);
   }
 
   bottom() {
@@ -77,7 +79,7 @@ class Ship {
   }
 
   left() {
-    return window.parseInt(window.getComputedStyle(this.ship).getPropertyValue('left'));
+    return parseInt(this.ship.style.left || 0);
   }
 
   right() {
@@ -85,10 +87,10 @@ class Ship {
   }
 
   isHit(monster) {
-    return monster.left() < this.right() &&
-      monster.right() > this.left() &&
-      monster.top() < this.bottom() &&
-      monster.bottom() > this.top();
+    return monster.left() < this.right()
+      && monster.right() > this.left()
+      && monster.top() < this.bottom()
+      && monster.bottom() > this.top();
   }
 
   loseLife() {

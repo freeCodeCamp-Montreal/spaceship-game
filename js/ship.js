@@ -1,5 +1,5 @@
 /* eslint-disable radix */
-/* global document window Pew */
+/* global document Pew */
 
 /**
  * Class which receives a ship node and
@@ -23,25 +23,14 @@ class Ship {
     this.ship.style.top = '0px';
     this.height = this.ship.height;
     this.width = this.ship.width;
-    // Default the ship to have 3 lives
+    // Default the ship to have 3 lives. Not useful yet
     this.lives = 3;
-    this.start = null;
-    this.topHolder = this.getPosition();
 
     console.log('Height of space ⭐', space.offsetHeight);
   }
 
-  /**
-   * Get the top position of the ship. There are different ways to go about this,
-   * so for fun, here we use the computed style's top property (string), remove
-   * the px part of it and coerce it into a Number data type.
-   */
-  getPosition() {
-    return parseInt(this.ship.style.top);
-  }
-
   moveUp() {
-    const position = this.getPosition();
+    const position = this.top();
 
     // If it's at the top, don't move the ship
     if (position <= 0) return;
@@ -50,7 +39,7 @@ class Ship {
   }
 
   moveDown() {
-    const position = this.getPosition();
+    const position = this.top();
 
     if (position >= this.spaceHeight - this.height) return;
 
@@ -58,8 +47,8 @@ class Ship {
   }
 
   shoot() {
-    const x = window.getComputedStyle(this.ship).getPropertyValue('left');
-    const y = window.getComputedStyle(this.ship).getPropertyValue('top');
+    const x = this.left();
+    const y = this.top();
     console.log('x:', x, 'y:', y);
     const newPew = new Pew(x, y, this, this.space);
 
@@ -67,19 +56,28 @@ class Ship {
     newPew.move();
   }
 
+  /**
+   * Get the top position of the ship. There are different ways to go about this,
+   * so for fun, here we use the computed style's top property (string), remove
+   * the px part of it and coerce it into a Number data type.
+   */
   top() {
-    return window.parseInt(window.getComputedStyle(this.ship).getPropertyValue('top'));
+    return parseInt(this.ship.style.top);
   }
 
   bottom() {
+    // 60 is the height of our ship which is hardcoded for simplicity
     return this.top() + 60;
   }
 
   left() {
-    return window.parseInt(window.getComputedStyle(this.ship).getPropertyValue('left'));
+    // We don't really use this method other than for debugging so don't worry about
+    // it too much. The || part says if the left side is falsy, use 0
+    return parseInt(this.ship.style.left || 0);
   }
 
   right() {
+    // 60 is the width of our ship which is hardcoded for simplicity
     return this.left() + 60;
   }
 }

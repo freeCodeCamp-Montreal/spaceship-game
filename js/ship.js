@@ -1,4 +1,5 @@
-/* global document window */
+/* eslint-disable radix */
+/* global document window Pew */
 
 /**
  * Class which receives a ship node and
@@ -18,6 +19,8 @@ class Ship {
     this.spaceHeight = space.offsetHeight;
     // Select and assign a ship element
     this.ship = document.querySelector('.ship');
+    // This is necessary to initialize top to a number
+    this.ship.style.top = '0px';
     this.height = this.ship.height;
     this.width = this.ship.width;
     // Default the ship to have 3 lives
@@ -34,9 +37,7 @@ class Ship {
    * the px part of it and coerce it into a Number data type.
    */
   getPosition() {
-    const top = window.getComputedStyle(this.ship).getPropertyValue('top');
-
-    return Number(top.substring(0, top.indexOf('px')));
+    return parseInt(this.ship.style.top);
   }
 
   moveUp() {
@@ -44,8 +45,6 @@ class Ship {
 
     // If it's at the top, don't move the ship
     if (position <= 0) return;
-
-    // window.requestAnimationFrame(this.step);
 
     this.ship.style.top = `${position - this.step}px`;
   }

@@ -34,15 +34,6 @@ class Pew {
     return this.left() + 60;
   }
 
-  isMonsterHit(monster) {
-    const topOfMonster = parseInt(monster.style.top);
-    const leftOfMonster = parseInt(monster.style.left);
-    return this.left() < leftOfMonster + 60
-      && this.right() > leftOfMonster
-      && this.top() < topOfMonster + 60
-      && this.bottom() > topOfMonster;
-  }
-
   move() {
     const interval = setInterval(() => {
       const x = parseInt(this.pew.style.left);
